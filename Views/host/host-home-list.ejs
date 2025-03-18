@@ -209,6 +209,11 @@
 
 
 </style>
+<script>
+  function confirmRemove() {
+    return confirm("Are you sure you want to remove this home?");
+  }
+</script>
 </head>
 
 
@@ -236,8 +241,10 @@
               <p class="house-rating">Rating: <%= home.Rating %>⭐</p>
 
               <div   class="book-form">
-                <!-- <input type="hidden" name="houseId" value="<%= home.id %>"> -->
-                <a  class="book-button1">Remove Home</a>
+                 <form action="/host/delete-home/<%=home.id %>" method="post">
+                  <button type="submit" class="book-button1" onclick="return confirmRemove()">Remove Home</button>
+                 </form>
+                
                 <a href="/host/edit-home/<%=home.id%>?editing=true" class="book-button2">Edit</a>
               </div>
             </div>

@@ -204,7 +204,7 @@
   <header class="header">
     <div class="container">
       <h1 class="title">Here are your Favourite homes</h1>
-      <!-- <p class="subtitle">Discover your perfect home</p> -->
+     
     </div>
   </header>   
 
@@ -222,12 +222,12 @@
               <p class="house-price">Price: Rs <%= home.price %></p>
               <p class="house-rating">Rating: <%= home.Rating %>⭐</p>
               <div class="button2">
-              <!-- <button class="contact-button" action="/">Book</button> -->
+              
               <a class="contact-button" href="/homes/<%= home.id %>">Book</a>
 
-              <form action="/404" method="post">
-                <input type="hidden" name="homeId" value="<%=home.id %>">
-                <button class="contact-button" name="homeId">Remove from Favorite</button>
+              <form action="/favourite/delete/<%= home.id %>" method="post">
+                
+                <button class="contact-button" type="submit">Remove from Favorite</button>
                 </form>
               </div>
             </div>

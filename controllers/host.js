@@ -14,7 +14,6 @@ exports.getedithome = (req,res,next)=>{
       return res.redirect("/host/host-home-list");
     }
 
-  // console.log(homeId,editing,home);
 
      res.render('host/edit-home',{home:home,title:'Edit home',editing:"editing",currentpage:"Add Home"});
   })
@@ -43,4 +42,15 @@ exports.postedithome=(req,res,next)=>{
   home.id=id;
   home.save();
   res.redirect('/host/host-home-list');
+};
+
+exports.postdeletehome=(req,res,next)=>{
+  const homeId=req.params.homeId;
+  Home.deletebyid(homeId,error=>{
+    if(error){
+      console.log("error while deleting",error);
+    }
+    res.redirect('/host/host-home-list');
+  })
+  
 };

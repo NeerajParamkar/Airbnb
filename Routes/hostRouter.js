@@ -9,6 +9,7 @@ hostRouter.post("/host/home-page",addedhome.postAdded);
 hostRouter.get("/host/host-home-list",addedhome.getHomelist );
 hostRouter.get("/host/edit-home/:homeId",addedhome.getedithome );
 hostRouter.post("/host/edit-home/",addedhome.postedithome);
+hostRouter.post("/host/delete-home/:homeId",addedhome.postdeletehome);
 
 // exports.hostRouter=hostRouter;
 module.exports=hostRouter;

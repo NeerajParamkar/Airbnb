@@ -18,7 +18,7 @@ exports.getbookings=(req,res,next)=>{
 
 
 exports.getfavouritelist = (req, res, next) => {
-  favourite.postgetfavourites((favourites) => { // Use correct function name
+  favourite.postgetfavourites((favourites) => { 
     Home.fetchall((registeredHouses) => {
       const favouratehomesdetaisl = registeredHouses.filter(home => favourites.includes(home.id));
       res.render("store/favourite-list", {
@@ -32,6 +32,8 @@ exports.getfavouritelist = (req, res, next) => {
 
 
 
+
+
 exports.getHomeDetails=(req,res,next)=>{
   const homeId = req.params.homeId;
   console.log("Id of home details page",homeId);
@@ -41,8 +43,6 @@ exports.getHomeDetails=(req,res,next)=>{
     }
     else {
   res.render('store/home-details',{home:homes,title:'home details',currentpage:"Bookings"});
-//   Home.fetchall((registeredHouses)=> res.render('store/home-details',{registeredHouses:registeredHouses,title:'My Favourite list'})
-// );
 }
   })
 };
@@ -57,6 +57,19 @@ exports.postaddtofavourite=(req,res,next)=>{
   })
   
 }
+exports.postremovefromfavourite=(req,res,next)=>{
+  const homeId=req.params.homeId;
+  favourite.deletebyId(homeId,error=>{
+    if(error){
+      console.log("Error while deleting favourite",error);
+    }
+    res.redirect("/favourite-list");
+    
+  })
+    
+}
+
+
 
 
 

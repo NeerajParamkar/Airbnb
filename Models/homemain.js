@@ -2,9 +2,10 @@
 const fs = require('fs');
 const path = require('path');
 const rootdir = require('../utils/pathUtils'); 
+const { error } = require('console');
+const Favourite = require('./favourite');
 
-
-// let registeredHouses = [];
+const homeDataPath = path.join(rootdir, 'data', 'homes.json');
 
 module.exports = class Home {
   constructor(hostname, price, Location, Rating, photo) {
@@ -28,7 +29,7 @@ module.exports = class Home {
         registeredHouses.push(this);
       }
        
-    const homeDataPath = path.join(rootdir, 'data', 'homes.json');
+    
     fs.writeFile(homeDataPath, JSON.stringify(registeredHouses, null, 2), (err) => {
       if (err) {
         console.error('Error writing file:', err);
@@ -41,7 +42,7 @@ module.exports = class Home {
   }
 
   static fetchall(callback) {
-    const homeDataPath = path.join(rootdir, 'data', 'homes.json');
+    
 
     fs.readFile(homeDataPath, (err, data) => {
       if (err) {
@@ -63,6 +64,14 @@ module.exports = class Home {
     this.fetchall(homes=>{
       const homeFound =homes.find(homes=>homes.id===homeId);
       callback(homeFound);
+    })
+  }
+  static deletebyid(homeId,callback){
+    this.fetchall(homes=>{
+      homes=homes.filter(homes=> homes.id !== homeId);
+      fs.writeFile(homeDataPath,JSON.stringify(homes),error=>{
+        Favourite.deletebyId(homeId,callback);
+      });
     })
   }
 };

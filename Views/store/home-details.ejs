@@ -1,7 +1,5 @@
 <%- include('../partilas/head') %>
 <style>
-  
-  /* Container for the house details */
 .house-container {
     display: flex;
     flex-direction: row;
@@ -15,13 +13,11 @@
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-/* Hover effect for the main container */
 .house-container:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-/* Styling for the house image */
 .house-image-container {
     flex: 1;
     border-radius: 15px;
@@ -36,10 +32,9 @@
 }
 
 .house-image:hover {
-    transform: scale(1.05); /* Slight zoom effect */
+    transform: scale(1.05); 
 }
 
-/* Styling for the house details */
 .house-details {
     flex: 1.5;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -49,7 +44,7 @@
 .house-name {
     font-size: 2.4em;
     font-weight: 700;
-    color: #4C51BF; /* Primary color */
+    color: #4C51BF; 
     margin-bottom: 20px;
     border-bottom: 2px solid #4C51BF;
     padding-bottom: 10px;
@@ -67,16 +62,15 @@
 .house-location:hover,
 .house-price:hover,
 .house-rating:hover {
-    color: #4C51BF; /* Hover effect with primary color */
+    color: #4C51BF; 
 }
 
-/* Extra details section */
 .house-extra-details {
     margin-top: 25px;
     padding: 20px;
     background-color: #f5f5f5;
     border-radius: 12px;
-    border-left: 4px solid #4C51BF; /* Left border with primary color */
+    border-left: 4px solid #4C51BF; 
 }
 
 .house-extra-details p {
@@ -84,8 +78,6 @@
     font-size: 1em;
     color: #666;
 }
-
-/* Button styling for contacting the owner */
 .contact-owner {
     margin-top: 30px;
     text-align: center;
@@ -95,7 +87,7 @@
     padding: 14px 28px;
     font-size: 1.2em;
     font-weight: 600;
-    background-color: #4C51BF; /* Primary color */
+    background-color: #4C51BF; 
     color: white;
     border: none;
     border-radius: 30px;
@@ -105,8 +97,8 @@
 }
 
 .contact-button:hover {
-    background-color: #3A47A2; /* Darker shade for hover */
-    transform: scale(1.05); /* Slight scale effect */
+    background-color: #3A47A2; 
+    transform: scale(1.05); 
 }
 
 .contact-button:focus {
@@ -114,7 +106,6 @@
     box-shadow: 0 0 15px #4C51BF, 0 0 25px rgba(76, 81, 191, 0.2);
 }
 
-/* Styling for the Rating */
 .house-rating {
     display: flex;
     align-items: center;
@@ -122,10 +113,9 @@
 }
 
 .house-rating span {
-    color: #f39c12; /* Gold color for stars */
+    color: #f39c12; 
 }
 
-/* Layout for smaller screens */
 @media (max-width: 768px) {
     .house-container {
         flex-direction: column;
