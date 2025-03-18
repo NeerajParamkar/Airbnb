@@ -1,0 +1,181 @@
+<%- include('../partilas/head') %>
+<style>
+  
+  /* Container for the house details */
+.house-container {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin: 40px auto;
+    max-width: 1100px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Hover effect for the main container */
+.house-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling for the house image */
+.house-image-container {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.house-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.house-image:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Styling for the house details */
+.house-details {
+    flex: 1.5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.house-name {
+    font-size: 2.4em;
+    font-weight: 700;
+    color: #4C51BF; /* Primary color */
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4C51BF;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.house-location,
+.house-price,
+.house-rating {
+    font-size: 1.1em;
+    margin: 12px 0;
+    color: #555;
+}
+
+.house-location:hover,
+.house-price:hover,
+.house-rating:hover {
+    color: #4C51BF; /* Hover effect with primary color */
+}
+
+/* Extra details section */
+.house-extra-details {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    border-left: 4px solid #4C51BF; /* Left border with primary color */
+}
+
+.house-extra-details p {
+    margin: 12px 0;
+    font-size: 1em;
+    color: #666;
+}
+
+/* Button styling for contacting the owner */
+.contact-owner {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.contact-button {
+    padding: 14px 28px;
+    font-size: 1.2em;
+    font-weight: 600;
+    background-color: #4C51BF; /* Primary color */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(76, 81, 191, 0.15);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-button:hover {
+    background-color: #3A47A2; /* Darker shade for hover */
+    transform: scale(1.05); /* Slight scale effect */
+}
+
+.contact-button:focus {
+    outline: none;
+    box-shadow: 0 0 15px #4C51BF, 0 0 25px rgba(76, 81, 191, 0.2);
+}
+
+/* Styling for the Rating */
+.house-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.house-rating span {
+    color: #f39c12; /* Gold color for stars */
+}
+
+/* Layout for smaller screens */
+@media (max-width: 768px) {
+    .house-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .house-details {
+        flex: 1;
+        margin-top: 20px;
+    }
+
+    .house-image-container {
+        width: 100%;
+        height: 300px;
+    }
+}
+
+
+</style>
+</head>
+
+
+<body class="body">
+  <%- include('../partilas/nav') %>
+
+  <div class="house-container">
+    <div class="house-image-container">
+        <img src="<%= home.photo %>" alt="<%= home.hostname %>" class="house-image">
+    </div>
+    <div class="house-details">
+        <h1 class="house-name"><%= home.hostname %></h1>
+        <p class="house-location">Location: <%= home.Location %></p>
+        <p class="house-price">Price: Rs <%= home.price %></p>
+        <p class="house-rating">Rating: <%= home.Rating %>⭐</p>
+        
+        <div class="house-extra-details">
+            <p class="house-description"><strong>Description:</strong> <%= home.description %></p>
+            <p><strong>Bedrooms:</strong> <%= home.bedrooms %></p>
+            <p><strong>Bathrooms:</strong> <%= home.bathrooms %></p>
+            <p><strong>Area:</strong> <%= home.area %> sq.ft.</p>
+        </div>
+        
+        <%- include('../partilas/favorite') %>
+    </div>
+</div>
+
+
+  
+</body>
+
+
+</html>

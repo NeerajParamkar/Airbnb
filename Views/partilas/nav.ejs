@@ -1,0 +1,59 @@
+<head>
+  <style>
+    .navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  background-color: #4C51BF;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+.navbar:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-link {
+  font-size: 1.125rem;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.3s;
+}
+
+.navbar-link:hover {
+  color: #4338ca;
+  background-color: #e0e7ff;
+}
+.navbar-link1 {
+  font-size: 1.125rem;
+  color: #ffffff;
+  background-color: #4C51BF;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.3s;
+}
+.navbar-link1:hover {
+  color:#4C51BF ;
+  background-color: #ffffff;
+}
+
+
+
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<div class="navbar">
+  <a href="/" class="<%=currentpage === 'Airbnb' ? 'bg-blue-400' : 'hover:bg-blue-400 text-white'%> py-2 px-4 rounded transition duration-300">Airbnb</a>
+  <a href="/home" class="<%=currentpage === 'Home Lists' ? 'bg-blue-400' : 'hover:bg-blue-400 text-white'%> py-2 px-4 rounded transition duration-300">Home Lists</a>
+  <a href="/booking" class="<%=currentpage === 'Bookings' ? 'bg-blue-400' : 'hover:bg-blue-400 text-white'%> py-2 px-4 rounded transition duration-300">Bookings</a>
+  <a href="/favourite-list" class="<%=currentpage === 'Favourite' ? 'bg-blue-400' : 'hover:bg-blue-400 text-white'%> py-2 px-4 rounded transition duration-300">Favourite</a>
+  <a href="/host/host-home-list" class="<%=currentpage === 'Host Homes' ? 'bg-blue-400' : 'hover:bg-blue-400 text-white'%> py-2 px-4 rounded transition duration-300">Host Homes</a>
+  <a href="/host/home-page" class="<%=currentpage === 'Add Home' ? 'bg-blue-400' : 'hover:bg-blue-400 text-white'%> py-2 px-4 rounded transition duration-300">Add Home</a>
+</div>
+

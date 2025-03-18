@@ -1,0 +1,27 @@
+<head>
+  <style>
+.contact-button {
+  background-color: #4c51bf;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 45px;
+}
+
+.contact-button:hover {
+  background-color: #2c5282;
+}
+
+
+  </style>
+</head>
+
+<!-- <div class="contact-owner"> -->
+  <form action="/favourite-list" method="post">
+  <button class="contact-button" >Add to Favorite</button>
+  <input type="hidden" name="homeId" value="<%=home.id %>">
+  </form>
+<!-- </div> -->

@@ -1,0 +1,72 @@
+<%- include('../partilas/head') %>
+<style>
+  .custom-body {
+  background-color: #f7fafc; 
+  font-family: sans-serif;
+  line-height: 1.625;
+  color: #2d3748; 
+}
+
+.custom-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.custom-container {
+  background-color: white;
+  padding: 2rem; 
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  max-width: 28rem; 
+  margin: 0 1rem; 
+  text-align: center;
+}
+
+.custom-heading {
+  font-size: 2.25rem; 
+  font-weight: 800; 
+  color: #48bb78;
+  margin-bottom: 1rem; 
+}
+
+.custom-subheading {
+  font-size: 1.5rem; 
+  color: #2d3748; 
+  margin-bottom: 1.5rem; 
+}
+
+.custom-button {
+  display: inline-block;
+  background-color: #5a67d8; 
+  color: white;
+  padding: 0.5rem 1rem; 
+  border-radius: 0.5rem; 
+  font-size: 1.125rem; 
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out; 
+}
+
+.custom-button:hover {
+  background-color: #4c51bf; 
+}
+
+</style>
+</head>
+
+
+
+<body class="custom-body">
+<%- include('../partilas/nav') %>
+
+  <div class="custom-flex">
+    <div class="custom-container">
+      <h1 class="custom-heading">Success!</h1>
+      <p class="custom-subheading">Your home has been registered successfully.</p>
+      <a href="/" class="custom-button">Go Back to Home</a>
+    </div>
+  </div>
+</body>
+
+</html>
